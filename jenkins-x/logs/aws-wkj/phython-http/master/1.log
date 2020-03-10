@@ -1,0 +1,123 @@
+
+Showing logs for build [32maws-wkj-phython-http-master-fv25s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-dd8p5[0m
+{"level":"warn","ts":1583865031.2818267,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583865031.2822866,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32maws-wkj-phython-http-master-fv25s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-zfcdq[0m
+{"level":"warn","ts":1583865034.5098724,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1583865034.5109153,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32maws-wkj-phython-http-master-fv25s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32maws-wkj-phython-http-master-fv25s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-aws-wkj-phython-http-master-fv25s-zgqth[0m
+{"level":"warn","ts":1583865059.9064043,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583865060.15473,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*******/phython-http.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32maws-wkj-phython-http-master-fv25s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:8f8dbeb5dfb421cfd2ec289033ae0a46e4882fb3
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32maws-wkj-phython-http-master-fv25s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32maws-wkj-phython-http-master-fv25s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32maws-wkj-phython-http-master-fv25s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+[36mINFO[0m[0000] Error while retrieving image from cache: <empty transport.Error response> 
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+[36mINFO[0m[0000] Executing 3 build triggers                   
+[36mINFO[0m[0000] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0000] Checking for cached layer 003361243233.dkr.ecr.us-east-2.amazonaws.com/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73... 
+[36mINFO[0m[0001] No cached layer found for cmd RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0001] Unpacking rootfs as cmd RUN pip install --no-cache-dir -r requirements.txt requires it. 
+[36mINFO[0m[0013] Taking snapshot of full filesystem...        
+[36mINFO[0m[0020] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0020] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0020] Taking snapshot of files...                  
+[36mINFO[0m[0020] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0020] cmd: /bin/sh                                 
+[36mINFO[0m[0020] args: [-c pip install --no-cache-dir -r requirements.txt] 
+You are using pip version 10.0.1, however version 20.0.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[36mINFO[0m[0021] Taking snapshot of full filesystem...        
+[36mINFO[0m[0024] Using files from context: [/workspace/source] 
+[36mINFO[0m[0024] COPY . /usr/src/app                          
+[36mINFO[0m[0024] Pushing layer 003361243233.dkr.ecr.us-east-2.amazonaws.com/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73 to cache now 
+[36mINFO[0m[0024] Taking snapshot of files...                  
+[36mINFO[0m[0024] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0024] COPY requirements.txt .                      
+[36mINFO[0m[0024] Taking snapshot of files...                  
+[36mINFO[0m[0024] ENV PORT 8080                                
+[36mINFO[0m[0024] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0024] EXPOSE 8080                                  
+[36mINFO[0m[0024] cmd: EXPOSE                                  
+[36mINFO[0m[0024] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0024] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0024] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0024] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0024] CMD ["app.py"]                               
+[36mINFO[0m[0024] No files changed in this command, skipping snapshotting. 
+[33mWARN[0m[0024] error uploading layer to cache: failed to push to destination 003361243233.dkr.ecr.us-east-2.amazonaws.com/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73: NAME_UNKNOWN: The repository with name 'todo/cache' does not exist in the registry with id '003361243233' 
+2020/03/10 18:31:28 pushed blob: sha256:0860b509ffdf993959635f7b2b5b5a81cfac2ced6ee7a9b0583158353e4a4fed
+2020/03/10 18:31:29 pushed blob: sha256:d32132bec708b8169ef77cce585aa199eee9f1872991046848510bc4bcff1dd6
+2020/03/10 18:31:29 pushed blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2020/03/10 18:31:29 pushed blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2020/03/10 18:31:29 pushed blob: sha256:cb545b21b7b5876afc1673784c1384229ccce4f8878e4f6e9d52730a57f6449e
+2020/03/10 18:31:29 pushed blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2020/03/10 18:31:29 pushed blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2020/03/10 18:31:29 pushed blob: sha256:8c89ce9bc93b52f375cf4022e0ba5a8af6f31dc25d07869ac52ccd1b429c2d79
+2020/03/10 18:31:29 pushed blob: sha256:b47c77c6f4380169b79e957698615f12c6dc99b0387df91a38ced00da8e8b3db
+2020/03/10 18:31:30 pushed blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2020/03/10 18:31:30 pushed blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2020/03/10 18:31:31 pushed blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2020/03/10 18:31:32 pushed blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2020/03/10 18:31:37 pushed blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2020/03/10 18:31:37 003361243233.dkr.ecr.us-east-2.amazonaws.com/*******/phython-http:0.0.1: digest: sha256:732a386991242f2102088f0745e0b4667979c2c9ca99a6d73943638b6d735837 size: 2385
+
+Showing logs for build [32maws-wkj-phython-http-master-fv25s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32maws-wkj-phython-http-master-fv25s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/phython-http to an unshallow repository
+Generating change log from git ref 069f9ad15144fb5747dbdccab031db197d53a315 => 78a69e356bedb8dd94bb32b8ffc75c443949d1b0
+Associating user x-0 in users.jenkins.io with email wkjoyce@amazon.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 8f8dbeb5dfb421cfd2ec289033ae0a46e4882fb3 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for *******/phython-http and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/*******/phython-http/releases/tag/v0.0.1
+generated: /workspace/source/charts/phython-http/templates/release.yaml
+Created Release phython-http-0-0-1 resource in namespace **
+Updating PipelineActivity *******-phython-http-master-1 with version 0.0.1
+Updated PipelineActivities *******-phython-http-master-1 with release notes URL: https://github.com/*******/phython-http/releases/tag/v0.0.1
+
+Showing logs for build [32maws-wkj-phython-http-master-fv25s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file phython-http-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32maws-wkj-phython-http-master-fv25s-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app phython-http version 0.0.1 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/*******/environment-jenkinsx-hackathon-staging/pull/1
+Added label updatebot to Pull Request https://github.com/*******/environment-jenkinsx-hackathon-staging/pull/1
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-hackathon-staging/pull/1
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-hackathon-staging/pull/1
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-hackathon-staging/pull/1
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-hackathon-staging/pull/1
+Pull Request https://github.com/*******/environment-jenkinsx-hackathon-staging/pull/1 is merged at sha af612b91d071b0643bd9f2568ebbae9379f5b16a
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names phython-http, **-phython-http, **-staging-phython-http
